@@ -71,7 +71,7 @@ ActionType Input::GetUserAction() const
 	{
 		if (y >= 0 && y < UI.ToolBarHeight)
 		{
-			int ClickedItemOrder = (x / UI.MenuItemWidth);
+			int ClickedItemOrder = (x / (UI.MenuItemWidth * 2.6));
 			switch (ClickedItemOrder)
 			{
 			case FIG_TYPE: return FIG_TYP;
@@ -79,6 +79,7 @@ ActionType Input::GetUserAction() const
 			case FIG_TYPE_COLOR: return FIG_TYP_COL;
 			case RESTART: return RESET;
 			case SWITCH_DRAW: return TO_DRAW;
+			case ITM_EXIT_PLAY: return EXIT;
 			default: return EMPTY;
 			}
 

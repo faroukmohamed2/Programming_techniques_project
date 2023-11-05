@@ -36,6 +36,7 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 	FIG_TYPE_COLOR,
 	RESTART,
 	SWITCH_DRAW,
+	ITM_EXIT_PLAY,		//Exit item
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
 };

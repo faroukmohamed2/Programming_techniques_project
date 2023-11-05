@@ -109,9 +109,10 @@ void Output::CreatePlayToolBar() const
 	MenuItemImages[FIG_TYPE_COLOR] = "images\\MenuItems\\fig_color_type.jpg";
 	MenuItemImages[RESTART] = "images\\MenuItems\\restart.jpg";
 	MenuItemImages[SWITCH_DRAW] = "images\\MenuItems\\draw_mode.jpg";
+	MenuItemImages[ITM_EXIT_PLAY] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	for (int i = 0; i < PLAY_ITM_COUNT; i++)
-		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth * 2.6, 0, UI.MenuItemWidth * 2.6, UI.ToolBarHeight);
 
 	pWind->SetPen(RED, 3);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
