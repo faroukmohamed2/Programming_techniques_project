@@ -91,7 +91,7 @@ ActionType Input::GetUserAction() const
 		///TODO:
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding action
-		return TO_PLAY;	//just for now. This should be updated
+		return STATUS;	//just for now. This should be updated
 	}	
 
 }

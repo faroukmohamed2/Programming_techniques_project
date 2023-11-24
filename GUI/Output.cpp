@@ -13,9 +13,10 @@ Output::Output()
 
 	
 	UI.StatusBarHeight = 50;
-	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 80;
-	
+	UI.ToolBarHeight = 70;
+	UI.MenuItemWidth = 65;
+	UI.MenuItemHeight = 35;
+
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
 	UI.MsgColor = RED;		//Messages color
@@ -72,28 +73,77 @@ void Output::ClearStatusBar() const
 void Output::CreateDrawToolBar() const
 {
 	UI.InterfaceMode = MODE_DRAW;
-	int i;
+	pWind->SetPen( WHITE, 1);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight, FILLED);
 	//You can draw the tool bar icons in any way you want.
 	//Below is one possible way
-	
+
 	//First prepare List of images for each menu item
 	//To control the order of these images in the menu, 
 	//reoder them in UI_Info.h ==> enum DrawMenuItem
-	string MenuItemImages[DRAW_ITM_COUNT];
-	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
-	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
+	string MenuItemImagesGR[DRAW_ITM_COUNT];
+	MenuItemImagesGR[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
+	MenuItemImagesGR[ITM_Circ] = "images\\MenuItems\\Menu_Circ.jpg";
+	MenuItemImagesGR[ITM_Square] = "images\\MenuItems\\Menu_Square.jpg";
+	MenuItemImagesGR[ITM_Hexa] = "images\\MenuItems\\Menu_Hexa.jpg";
+	MenuItemImagesGR[ITM_Trig] = "images\\MenuItems\\Menu_Trig.jpg";
 
-	//TODO: Prepare images for each menu item and add it to the list
+	MenuItemImagesGR[ITM_Red] = "images\\MenuItems\\Menu_Red.jpg";
+	MenuItemImagesGR[ITM_Orange] = "images\\MenuItems\\Menu_Orange.jpg";
+	MenuItemImagesGR[ITM_Blue] = "images\\MenuItems\\Menu_Blue.jpg";
+	MenuItemImagesGR[ITM_Yellow] = "images\\MenuItems\\Menu_Yellow.jpg";
+	MenuItemImagesGR[ITM_Green] = "images\\MenuItems\\Menu_Green.jpg";
+	MenuItemImagesGR[ITM_Black] = "images\\MenuItems\\Menu_Black.jpg";
 
-	//Draw menu item one image at a time
-	for(i=0; i<DRAW_ITM_COUNT; i++)
-		pWind->DrawImage(MenuItemImages[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
-	//pWind->DrawRectangle(i * UI.MenuItemWidth, UI.ToolBarHeight,UI.width, 0);
+	MenuItemImagesGR[ITM_Border] = "images\\MenuItems\\Menu_Border.jpg";
+	MenuItemImagesGR[ITM_Move] = "images\\MenuItems\\Menu_Move.jpg";
+	MenuItemImagesGR[ITM_Fill] = "images\\MenuItems\\Menu_Fill.jpg";
+	MenuItemImagesGR[ITM_Undo] = "images\\MenuItems\\Menu_Undo.jpg";
+	MenuItemImagesGR[ITM_Delete] = "images\\MenuItems\\Menu_Del.jpg";
+	MenuItemImagesGR[ITM_Redo] = "images\\MenuItems\\Menu_Redo.jpg";
+	MenuItemImagesGR[ITM_ClearALL] = "images\\MenuItems\\Menu_Clear.jpg";
+	MenuItemImagesGR[ITM_Start] = "images\\MenuItems\\Menu_Start.jpg";
+	MenuItemImagesGR[ITM_Select] = "images\\MenuItems\\Menu_Select.jpg";
+	MenuItemImagesGR[ITM_Stop] = "images\\MenuItems\\Menu_Stop.jpg";
+	MenuItemImagesGR[ITM_Save] = "images\\MenuItems\\Menu_Save.jpg";
+	MenuItemImagesGR[ITM_Play] = "images\\MenuItems\\Menu_Play.jpg";
+	MenuItemImagesGR[ITM_Load] = "images\\MenuItems\\Menu_Load.jpg";
+	
+	MenuItemImagesGR[ITM_Game] = "images\\MenuItems\\Menu_Game.jpeg";
+	MenuItemImagesGR[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 
-	//Draw a line under the toolbar
+	int i = 0; int x = 0;               // i for the item , x for the position 
+	while (i < (DRAW_ITM_COUNT - 2)) {
+		if (x % 2 == 0)
+			pWind->DrawImage(MenuItemImagesGR[i], (x / 2) * UI.MenuItemWidth, 0, UI.MenuItemWidth, (UI.MenuItemHeight));
+		// if ( i == GR )
+		// x++; 
+		else
+			pWind->DrawImage(MenuItemImagesGR[i], (x / 2) * UI.MenuItemWidth, UI.ToolBarHeight / 2, UI.MenuItemWidth, (UI.MenuItemHeight));
+		if (i == 4 || i == 17)
+			x++;
+
+		i++;
+		x++;
+	}
+
+	pWind->DrawImage(MenuItemImagesGR[i++], UI.width - (3 * UI.MenuItemWidth), 0, 1.5 * UI.MenuItemWidth, (UI.ToolBarHeight));
+	pWind->DrawImage(MenuItemImagesGR[i], UI.width - (1.5 * UI.MenuItemWidth), 0, 1.5 * UI.MenuItemWidth, UI.ToolBarHeight);
+	/*
+	for (int i = 0; i< 11; i++)
+		if ( i % 2 == 0)
+		pWind->DrawImage(MenuItemImagesGR[i], (i/2)*UI.MenuItemWidth, 0, UI.MenuItemWidth, (UI.MenuItemHeight) );
+		else
+		pWind->DrawImage(MenuItemImagesGR[i], (i/2) * UI.MenuItemWidth, (UI.ToolBarHeight/2) , UI.MenuItemWidth, UI.MenuItemHeight);
+		*/
+
+
+
+		//Draw a line under the toolbar
 	pWind->SetPen(RED, 3);
-	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);	
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -102,6 +152,9 @@ void Output::CreatePlayToolBar() const
 {
 
 	UI.InterfaceMode = MODE_PLAY;
+	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight, FILLED);
 
 	string MenuItemImages[PLAY_ITM_COUNT];
 	MenuItemImages[FIG_TYPE] = "images\\MenuItems\\fig_type.jpg";
