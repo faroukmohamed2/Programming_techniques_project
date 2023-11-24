@@ -1,1 +1,0 @@
-# Programming_technique_project

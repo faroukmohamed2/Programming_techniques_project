@@ -1,4 +1,0 @@
-﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  Input.cpp
-D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\GUI\Input.cpp(74,25): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  PT-Project.vcxproj -> D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\PT Project.exe
