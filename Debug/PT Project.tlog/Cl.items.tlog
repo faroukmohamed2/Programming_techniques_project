@@ -1,39 +1,39 @@
-E:\personal\c++\projectgithub\CMUgraphicsLib\auxil.cpp;E:\personal\c++\projectgithub\Debug\auxil.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\CMUgraphics.cpp;E:\personal\c++\projectgithub\Debug\CMUgraphics.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\colors.cpp;E:\personal\c++\projectgithub\Debug\colors.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\image.cpp;E:\personal\c++\projectgithub\Debug\image.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpegload.c;E:\personal\c++\projectgithub\Debug\jpegload.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\keyqueue.cpp;E:\personal\c++\projectgithub\Debug\keyqueue.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\mousequeue.cpp;E:\personal\c++\projectgithub\Debug\mousequeue.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\windowinput.cpp;E:\personal\c++\projectgithub\Debug\windowinput.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jcomapi.c;E:\personal\c++\projectgithub\Debug\jcomapi.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jcparam.c;E:\personal\c++\projectgithub\Debug\jcparam.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdapimin.c;E:\personal\c++\projectgithub\Debug\jdapimin.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdapistd.c;E:\personal\c++\projectgithub\Debug\jdapistd.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdatasrc.c;E:\personal\c++\projectgithub\Debug\jdatasrc.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdcoefct.c;E:\personal\c++\projectgithub\Debug\jdcoefct.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdcolor.c;E:\personal\c++\projectgithub\Debug\jdcolor.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jddctmgr.c;E:\personal\c++\projectgithub\Debug\jddctmgr.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdhuff.c;E:\personal\c++\projectgithub\Debug\jdhuff.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdinput.c;E:\personal\c++\projectgithub\Debug\jdinput.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdmainct.c;E:\personal\c++\projectgithub\Debug\jdmainct.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdmarker.c;E:\personal\c++\projectgithub\Debug\jdmarker.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdmaster.c;E:\personal\c++\projectgithub\Debug\jdmaster.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdmerge.c;E:\personal\c++\projectgithub\Debug\jdmerge.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdphuff.c;E:\personal\c++\projectgithub\Debug\jdphuff.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdpostct.c;E:\personal\c++\projectgithub\Debug\jdpostct.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdsample.c;E:\personal\c++\projectgithub\Debug\jdsample.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jdtrans.c;E:\personal\c++\projectgithub\Debug\jdtrans.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jerror.c;E:\personal\c++\projectgithub\Debug\jerror.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jidctflt.c;E:\personal\c++\projectgithub\Debug\jidctflt.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jidctfst.c;E:\personal\c++\projectgithub\Debug\jidctfst.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jidctint.c;E:\personal\c++\projectgithub\Debug\jidctint.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jidctred.c;E:\personal\c++\projectgithub\Debug\jidctred.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jmemmgr.c;E:\personal\c++\projectgithub\Debug\jmemmgr.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jmemnobs.c;E:\personal\c++\projectgithub\Debug\jmemnobs.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jquant1.c;E:\personal\c++\projectgithub\Debug\jquant1.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jquant2.c;E:\personal\c++\projectgithub\Debug\jquant2.obj
-E:\personal\c++\projectgithub\CMUgraphicsLib\jpeg\jutils.c;E:\personal\c++\projectgithub\Debug\jutils.obj
-E:\personal\c++\projectgithub\GUI\Input.cpp;E:\personal\c++\projectgithub\Debug\Input.obj
-E:\personal\c++\projectgithub\GUI\Output.cpp;E:\personal\c++\projectgithub\Debug\Output.obj
-E:\personal\c++\projectgithub\TestCode.cpp;E:\personal\c++\projectgithub\Debug\TestCode.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\auxil.cpp;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\auxil.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\CMUgraphics.cpp;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\CMUgraphics.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\colors.cpp;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\colors.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\image.cpp;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\image.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpegload.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jpegload.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\keyqueue.cpp;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\keyqueue.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\mousequeue.cpp;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\mousequeue.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\windowinput.cpp;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\windowinput.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jcomapi.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jcomapi.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jcparam.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jcparam.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdapimin.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdapimin.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdapistd.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdapistd.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdatasrc.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdatasrc.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdcoefct.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdcoefct.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdcolor.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdcolor.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jddctmgr.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jddctmgr.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdhuff.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdhuff.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdinput.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdinput.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdmainct.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdmainct.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdmarker.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdmarker.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdmaster.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdmaster.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdmerge.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdmerge.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdphuff.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdphuff.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdpostct.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdpostct.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdsample.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdsample.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jdtrans.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jdtrans.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jerror.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jerror.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jidctflt.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jidctflt.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jidctfst.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jidctfst.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jidctint.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jidctint.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jidctred.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jidctred.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jmemmgr.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jmemmgr.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jmemnobs.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jmemnobs.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jquant1.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jquant1.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jquant2.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jquant2.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\CMUgraphicsLib\jpeg\jutils.c;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\jutils.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\GUI\Input.cpp;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\Input.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\GUI\Output.cpp;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\Output.obj
+D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\TestCode.cpp;D:\faculty\cmp 1st\programming technique\Project\Phase1 - Code F22\Programming_techniques_project\Debug\TestCode.obj

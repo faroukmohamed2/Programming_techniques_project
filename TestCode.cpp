@@ -134,18 +134,12 @@ int main()
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	
 	pOut->PrintMessage("Testing Input ability to read strings");
-
-	string out = pIn->GetSrting(pOut);
-	if (out != "")
+	string outputmessage = pIn->GetSrting(pOut);
+	if (outputmessage != "")
 	{
-		//pIn->GetPointClicked(x, y);
-		//pOut->ClearStatusBar();
-		//pIn->GetPointClicked(x, y);
-		pOut->PrintMessage("You Entered");
-		pIn->GetPointClicked(x, y);
-		pOut->PrintMessage(out);   // change?
-
-		//pOut->PrintMessage(out);
+		pOut->ClearStatusBar();
+		pOut->PrintMessage("You Entered: " + outputmessage);
+	
 	}
 	///TODO: Add code here to 
 	// 1- Read a string from the user on the status bar
