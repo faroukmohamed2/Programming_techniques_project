@@ -113,43 +113,28 @@ void Output::CreateDrawToolBar() const
 	MenuItemImagesGR[ITM_Game] = "images\\MenuItems\\Menu_Game.jpeg";
 	MenuItemImagesGR[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
-	//int Printed = 0; 
-
-	//DrawGROUP(Printed ,NumGR1, MenuItemImagesGR); 
-	//DrawGROUP( Printed , NumGR2, MenuItemImagesGR);
-	//DrawGROUP(Printed , NumGR3, MenuItemImagesGR);
-	//DrawGROUP(Printed ,NumGR4, MenuItemImagesGR);
-		
-	int i = 0; int x = 0;               // i for the item , x for the position 
-	 while (i < (DRAW_ITM_COUNT - 2)) {
-		if (x % 2 == 0)
-			pWind->DrawImage(MenuItemImagesGR[i], (x / 2) * UI.MenuItemWidth, 0, UI.MenuItemWidth, (UI.MenuItemHeight));
-		else
-			pWind->DrawImage(MenuItemImagesGR[i], (x / 2) * UI.MenuItemWidth, UI.ToolBarHeight / 2, UI.MenuItemWidth, (UI.MenuItemHeight));
-		if (i == NumGR1-1 || i == 17)
-		x++;
-		i++;
-		x++;
-	}
+	int Printed = 0; 
+	int UpperItems = 0; 
+	DrawGROUP(UpperItems,Printed ,NumGR1, MenuItemImagesGR);
+	DrawGROUP (UpperItems, Printed , NumGR2, MenuItemImagesGR);
+	DrawGROUP(UpperItems, Printed , NumGR3, MenuItemImagesGR);
+	DrawGROUP (UpperItems, Printed , NumGR4, MenuItemImagesGR);
 	
-	//for (int i = 0; i < DRAW_ITM_COUNT; i++)
-		//pWind->DrawImage(MenuItemImagesGR[i], i * UI.MenuItemWidth , 0, UI.MenuItemWidth , UI.ToolBarHeight);
-
-	pWind->DrawImage(MenuItemImagesGR[i++], UI.width - (3 * UI.MenuItemWidth), 0, 1.5 * UI.MenuItemWidth, (UI.ToolBarHeight));
-	pWind->DrawImage(MenuItemImagesGR[i], UI.width - (1.5 * UI.MenuItemWidth), 0, 1.5 * UI.MenuItemWidth, UI.ToolBarHeight);
+	pWind->DrawImage(MenuItemImagesGR[Printed++], UI.width - (3 * UI.MenuItemWidth), 0, 1.5 * UI.MenuItemWidth, (UI.ToolBarHeight));
+	pWind->DrawImage(MenuItemImagesGR[Printed], UI.width - (1.5 * UI.MenuItemWidth), 0, 1.5 * UI.MenuItemWidth, UI.ToolBarHeight);
 	
 
 
 		//Draw a line under the toolbar
-	pWind->SetPen(RED, 1);
-	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+	//pWind->SetPen(RED, 1);
+	//pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-void Output::DrawGROUP( int& Printed , const int ITEMS , const string MenuItemImagesGR[DRAW_ITM_COUNT] ) const  {
+void Output::DrawGROUP(int& UpperITEMS ,int& Printed , const int ITEMS , const string MenuItemImagesGR[DRAW_ITM_COUNT] ) const  {
 
-	   
-	int x = (Printed % 2 == 0) ? Printed : Printed + 1; 
+	
+	int x = 2 * UpperITEMS;
 
 	
 	for (int i = Printed; i < ITEMS + Printed; i++) {
@@ -161,6 +146,7 @@ void Output::DrawGROUP( int& Printed , const int ITEMS , const string MenuItemIm
 
 	}
 
+	UpperITEMS += (ITEMS+1) / 2;
 	Printed += ITEMS; 
 }
 
@@ -249,7 +235,7 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 
 
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
-	CreateDrawToolBar();
+	
 }
 
 
@@ -296,7 +282,7 @@ void Output::DrawTrig(Point P1, Point P2, Point P3, GfxInfo TrigGfxInfo, bool se
 
 
 	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
-	CreateDrawToolBar();
+	
 }
 
 void Output::DrawHexa(Point P1, GfxInfo HexaGfxInfo, bool selected) const

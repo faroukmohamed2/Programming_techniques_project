@@ -49,19 +49,10 @@ ActionType Input::GetUserAction() const
 
 	if (UI.InterfaceMode == MODE_DRAW)	//GUI in the DRAW mode
 	{
-		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
-		{
-			return DRAWING_AREA;
-		}
-		if (y < UI.height && y > UI.StatusBarHeight)
-			return STATUS;
-		if (x < UI.MenuItemWidth * 13) {
-			//Check whick Menu item was clicked
-			//==> This assumes that menu items are lined up horizontally <==
+		if (x < UI.MenuItemWidth * 13 && y < UI.ToolBarHeight) {
+
 			int ClickedItemXIndex = (x / UI.MenuItemWidth);
 			int CliekedItemYIndex = (y / UI.MenuItemHeight);
-			//Divide x coord of the point clicked by the menu item width (int division)
-			//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
 
 			int itemIndex = ClickedItemXIndex * 2 + CliekedItemYIndex;
 			if (itemIndex > 4) {
@@ -79,7 +70,7 @@ ActionType Input::GetUserAction() const
 			return action;
 
 		}
-		else {
+		else if (y < UI.ToolBarHeight) {
 
 			int ClickedItemXIndex = ((UI.width - x) / (UI.MenuItemWidth * 1.5));
 			if (ClickedItemXIndex > 1) return EMPTY;
