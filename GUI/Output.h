@@ -11,7 +11,7 @@ public:
 
 	window* CreateWind(int, int, int , int) const; //creates the application window
 	void CreateDrawToolBar() const;	//creates Draw mode toolbar & menu
-	void DrawGROUP(int& , const int , const string [] ) const ;       // Draws Each Group 
+	void DrawGROUP(int& , int& , const int , const string [] ) const ;       // Draws Each Group 
 	void CreatePlayToolBar() const;	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
 
