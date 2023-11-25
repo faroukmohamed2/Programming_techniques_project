@@ -89,6 +89,7 @@ ActionType Input::GetUserAction() const
 		//[3] User clicks on the status bar
 		return STATUS;
 	}
+
 	else	//GUI is in PLAY mode
 	{
 		if (y >= 0 && y < UI.ToolBarHeight)
