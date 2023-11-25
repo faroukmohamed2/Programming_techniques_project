@@ -275,20 +275,15 @@ int main()
 	// TEST 3: 
 	//			Input Class: Read strings from the user
 	///////////////////////////////////////////////////////////////////////////////////
-	/*pOut->PrintMessage("TEST3: Now Time to test class Input, Click anywhere to continue");
+	pOut->PrintMessage("TEST3: Now Time to test class Input, Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	
 	pOut->PrintMessage("Testing Input ability to read strings");
 	string outputmessage = pIn->GetSrting(pOut);
 	if (outputmessage != "")
 	{
-		//pIn->GetPointClicked(x, y);
-		//pOut->ClearStatusBar();
-		//pIn->GetPointClicked(x, y);
-		pOut->PrintMessage("You Entered");
-		pIn->GetPointClicked(x, y);
-		pOut->PrintMessage(outputmessage);   // change?
-
+		pOut->ClearStatusBar();
+		pOut->PrintMessage("You Entered: " + outputmessage);
 		//pOut->PrintMessage(out);
 	}
 	///TODO: Add code here to 
@@ -418,7 +413,7 @@ int main()
 			pOut->PrintMessage("Action: Select the shape");
 			break;
 		case FIG_COL:
-			pOut->PrintMessage("Action: Select the color");
+			pOut->PrintMessage("Action: Select by the color");
 			break;
 		case FIG_TYP_COL:
 			pOut->PrintMessage("Action: Select the shape of color");

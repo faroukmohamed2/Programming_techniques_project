@@ -49,6 +49,12 @@ ActionType Input::GetUserAction() const
 
 	if (UI.InterfaceMode == MODE_DRAW)	//GUI in the DRAW mode
 	{
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		{
+			return DRAWING_AREA;
+		}
+		if (y < UI.height && y > UI.StatusBarHeight)
+			return STATUS;
 		if (x < UI.MenuItemWidth * 13) {
 			//Check whick Menu item was clicked
 			//==> This assumes that menu items are lined up horizontally <==
@@ -101,12 +107,13 @@ ActionType Input::GetUserAction() const
 				return FIG_TYP;
 			if (x > (UI.width - UI.MenuItemWidth * 2))
 				return EXIT;
+			if (x > (UI.width - UI.MenuItemWidth * 2 * 2))
+				return TO_DRAW;
 			switch (ClickedItemOrder)
 			{
 			case FIG_COLOR: return FIG_COL;
 			case FIG_TYPE_COLOR: return FIG_TYP_COL;
 			case RESTART: return RESET;
-			case SWITCH_DRAW: return TO_DRAW;
 			default: return EMPTY;
 			}
 
