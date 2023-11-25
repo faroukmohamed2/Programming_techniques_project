@@ -59,6 +59,12 @@ enum DrawMenuItemGR // the shapes
 
 };
 
+#define NumGR1 5
+#define NumGR2 6
+#define NumGR3 7
+#define NumGR4 6
+
+
 enum PlayMenuItem //The items of the Play menu (you should add more items)
 {
 	//Note: Items are **(ordered)** here as they appear in menu

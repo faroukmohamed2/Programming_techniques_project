@@ -6,20 +6,52 @@
 //This file contains some global constants and definitions to be used in the project.
 enum ActionType //The actions supported (you can add more if needed)
 {
-	DRAW_RECT,		//Draw Rectangle
-	EXIT,			//Exit
-	TO_DRAW,		//Switch interface to Draw mode
-	TO_PLAY,		//Switch interface to Play mode
-	EMPTY,			//A click on empty place in the toolbar
-	DRAWING_AREA,	//A click on the drawing area
-	STATUS,
-	FIG_TYP,
-	FIG_COL,
-	FIG_TYP_COL,
-	RESET
-	//A click on the status bar
+    //A click on the status bar
+    FIG_TYP,
+    FIG_COL,
+    FIG_TYP_COL,
+    RESET,
 
-	///TODO: Add the other action types of the two modes
+    DRAWING_AREA,    //A click on the drawing area
+    STATUS,            //A click on the status bar
+
+    ///TODO: Add the other action types of the two modes
+    DRW_RECT, //Recangle item in menu
+    DRW_Circ,
+    DRW_Square,
+    DRW_Hexa,
+    DRW_Trig,
+
+    DRW_Red,// group 1 count = 5
+    DRW_Orange,
+    DRW_Blue,
+    DRW_Yellow,
+    DRW_Green,
+    DRW_Black,
+
+    Pencile_Tool,// group 2 count = 6 
+    Move_Tool,
+    Fill_Tool,
+    UNDO,
+    Delete,
+    REDO,
+    ClearBoard,
+
+    START_RECORD,// group 3 count = 7
+    Selection_Tool,
+    STOP_RECORD,
+    SAVE_RECORD,
+    PLAY_RECORD,
+    LOAD_RECORD,
+
+    TO_DRAW,        //Switch interface to Draw mode
+    TO_PLAY,        //Switch interface to Play mode
+    EXIT,            //Exit
+
+    EMPTY,            //A click on empty place in the toolbar
+
+
+    ///TODO: Add the other action types of the two modes
 };
 
 struct Point	//To be used for figures points

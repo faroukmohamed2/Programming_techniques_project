@@ -12,6 +12,15 @@ void Input::GetPointClicked(int &x, int &y) const
 	pWind->WaitMouseClick(x, y);	//Wait for mouse click
 }
 
+void Input::getValidDrawPoint(Point& P) const
+{
+	while ((P.y < UI.ToolBarHeight) || (P.y > UI.height - UI.StatusBarHeight))
+	{
+		GetPointClicked(P.x, P.y);
+	}
+}
+
+
 string Input::GetSrting(Output *pO) const 
 {
 	string Label;
@@ -34,36 +43,52 @@ string Input::GetSrting(Output *pO) const
 
 //This function reads the position where the user clicks to determine the desired action
 ActionType Input::GetUserAction() const
-{	
-	int x,y;
+{
+	int x, y;
 	pWind->WaitMouseClick(x, y);	//Get the coordinates of the user click
 
-	if(UI.InterfaceMode == MODE_DRAW)	//GUI in the DRAW mode
+	if (UI.InterfaceMode == MODE_DRAW)	//GUI in the DRAW mode
 	{
-		//[1] If user clicks on the Toolbar
-		if ( y >= 0 && y < UI.ToolBarHeight)
-		{	
+		if (x < UI.MenuItemWidth * 13) {
 			//Check whick Menu item was clicked
 			//==> This assumes that menu items are lined up horizontally <==
-			int ClickedItemOrder = (x / UI.MenuItemWidth);
+			int ClickedItemXIndex = (x / UI.MenuItemWidth);
+			int CliekedItemYIndex = (y / UI.MenuItemHeight);
 			//Divide x coord of the point clicked by the menu item width (int division)
 			//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
 
-			switch (ClickedItemOrder)
-			{
-			case ITM_RECT: return DRAW_RECT;
-			case ITM_EXIT: return EXIT;
-			
-			default: return EMPTY;	//A click on empty place in desgin toolbar
+			int itemIndex = ClickedItemXIndex * 2 + CliekedItemYIndex;
+			if (itemIndex > 4) {
+				if (itemIndex == 5)return EMPTY;
+				itemIndex--;
 			}
+			if (itemIndex > 17) {
+				if (itemIndex == 18)return EMPTY;
+				itemIndex--;
+			}
+
+			ActionType action = (ActionType)(itemIndex + 6);
+			if (action > EMPTY) return EMPTY;
+
+			return action;
+
+		}
+		else {
+
+			int ClickedItemXIndex = ((UI.width - x) / (UI.MenuItemWidth * 1.5));
+			if (ClickedItemXIndex > 1) return EMPTY;
+
+			ActionType action = (ActionType)(EMPTY - ClickedItemXIndex - 1);
+			return action;
+
 		}
 
 		//[2] User clicks on the drawing area
-		if ( y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
 		{
-			return DRAWING_AREA;	
+			return DRAWING_AREA;
 		}
-		
+
 		//[3] User clicks on the status bar
 		return STATUS;
 	}
@@ -94,8 +119,7 @@ ActionType Input::GetUserAction() const
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding action
 		return STATUS;	//just for now. This should be updated
-	}	
-
+	}
 }
 /////////////////////////////////
 	

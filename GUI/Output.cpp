@@ -13,9 +13,9 @@ Output::Output()
 
 	
 	UI.StatusBarHeight = 50;
-	UI.ToolBarHeight = 70;
-	UI.MenuItemWidth = 65;
-	UI.MenuItemHeight = 35;
+	UI.ToolBarHeight = 60;
+	UI.MenuItemWidth = 60;
+	UI.MenuItemHeight = 30;
 
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
@@ -31,7 +31,7 @@ Output::Output()
 	//Change the title
 	pWind->ChangeTitle("Paint for Kids - Programming Techniques Project");
 	//CreateDrawToolBar();
-	CreatePlayToolBar();
+	CreateDrawToolBar();
 	CreateStatusBar();
 }
 
@@ -113,40 +113,58 @@ void Output::CreateDrawToolBar() const
 	MenuItemImagesGR[ITM_Game] = "images\\MenuItems\\Menu_Game.jpeg";
 	MenuItemImagesGR[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
+	//int Printed = 0; 
 
+	//DrawGROUP(Printed ,NumGR1, MenuItemImagesGR); 
+	//DrawGROUP( Printed , NumGR2, MenuItemImagesGR);
+	//DrawGROUP(Printed , NumGR3, MenuItemImagesGR);
+	//DrawGROUP(Printed ,NumGR4, MenuItemImagesGR);
+		
 	int i = 0; int x = 0;               // i for the item , x for the position 
-	while (i < (DRAW_ITM_COUNT - 2)) {
+	 while (i < (DRAW_ITM_COUNT - 2)) {
 		if (x % 2 == 0)
 			pWind->DrawImage(MenuItemImagesGR[i], (x / 2) * UI.MenuItemWidth, 0, UI.MenuItemWidth, (UI.MenuItemHeight));
-		// if ( i == GR )
-		// x++; 
 		else
 			pWind->DrawImage(MenuItemImagesGR[i], (x / 2) * UI.MenuItemWidth, UI.ToolBarHeight / 2, UI.MenuItemWidth, (UI.MenuItemHeight));
-		if (i == 4 || i == 17)
-			x++;
-
+		if (i == NumGR1-1 || i == 17)
+		x++;
 		i++;
 		x++;
 	}
+	
+	//for (int i = 0; i < DRAW_ITM_COUNT; i++)
+		//pWind->DrawImage(MenuItemImagesGR[i], i * UI.MenuItemWidth , 0, UI.MenuItemWidth , UI.ToolBarHeight);
 
 	pWind->DrawImage(MenuItemImagesGR[i++], UI.width - (3 * UI.MenuItemWidth), 0, 1.5 * UI.MenuItemWidth, (UI.ToolBarHeight));
 	pWind->DrawImage(MenuItemImagesGR[i], UI.width - (1.5 * UI.MenuItemWidth), 0, 1.5 * UI.MenuItemWidth, UI.ToolBarHeight);
-	/*
-	for (int i = 0; i< 11; i++)
-		if ( i % 2 == 0)
-		pWind->DrawImage(MenuItemImagesGR[i], (i/2)*UI.MenuItemWidth, 0, UI.MenuItemWidth, (UI.MenuItemHeight) );
-		else
-		pWind->DrawImage(MenuItemImagesGR[i], (i/2) * UI.MenuItemWidth, (UI.ToolBarHeight/2) , UI.MenuItemWidth, UI.MenuItemHeight);
-		*/
-
+	
 
 
 		//Draw a line under the toolbar
-	pWind->SetPen(RED, 3);
+	pWind->SetPen(RED, 1);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+void Output::DrawGROUP( int& Printed , const int ITEMS , const string MenuItemImagesGR[DRAW_ITM_COUNT] ) const  {
+
+	   
+	int x = (Printed % 2 == 0) ? Printed : Printed + 1; 
+
+	
+	for (int i = Printed; i < ITEMS + Printed; i++) {
+
+		if (x % 2 == 0)
+			pWind->DrawImage(MenuItemImagesGR[i], (x++ / 2) * UI.MenuItemWidth, 0, UI.MenuItemWidth, (UI.MenuItemHeight));
+		else
+			pWind->DrawImage(MenuItemImagesGR[i], (x++ / 2) * UI.MenuItemWidth, UI.ToolBarHeight / 2, UI.MenuItemWidth, (UI.MenuItemHeight));
+
+	}
+
+	Printed += ITEMS; 
+}
+
+
 
 void Output::CreatePlayToolBar() const
 {
@@ -208,27 +226,133 @@ int Output::getCrntPenWidth() const		//get current pen width
 //								Figures Drawing Functions								//
 //======================================================================================//
 
+
+
 void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) const
 {
 	color DrawingClr;
-	if(selected)	
+	if (selected)
 		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
-	else			
+	else
 		DrawingClr = RectGfxInfo.DrawClr;
-	
-	pWind->SetPen(DrawingClr,1);
+
+	pWind->SetPen(DrawingClr, 1);
 	drawstyle style;
-	if (RectGfxInfo.isFilled)	
+	if (RectGfxInfo.isFilled)
 	{
-		style = FILLED;		
+		style = FILLED;
 		pWind->SetBrush(RectGfxInfo.FillClr);
 	}
-	else	
+	else
 		style = FRAME;
 
-	
+
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
-	
+	CreateDrawToolBar();
+}
+
+
+void Output::DrawSquare(Point P1, GfxInfo squareGfxInfo, bool selected) const
+{
+	const int length = 200;
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = squareGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (squareGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(squareGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+
+	pWind->DrawRectangle((P1.x) - length, (P1.y) - length, (P1.x) + length, (P1.y) + length, style);
+	CreateDrawToolBar();
+}
+void Output::DrawTrig(Point P1, Point P2, Point P3, GfxInfo TrigGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = TrigGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (TrigGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(TrigGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
+	CreateDrawToolBar();
+}
+
+void Output::DrawHexa(Point P1, GfxInfo HexaGfxInfo, bool selected) const
+{
+	float l = 100;
+	int X[6];
+	int Y[6];
+	X[3] = (P1.x) + l;
+	X[0] = (P1.x) - l;
+	Y[0] = Y[3] = P1.y;
+	X[1] = X[5] = (P1.x) - (l / 2);
+	X[2] = X[4] = (P1.x) + (l / 2);
+	Y[4] = Y[5] = (P1.y) + (0.8660254 * l);
+	Y[1] = Y[2] = (P1.y) - (0.8660254 * l);
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = HexaGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (HexaGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(HexaGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+
+	pWind->DrawPolygon(X, Y, 6, style);
+	CreateDrawToolBar();
+}
+
+void Output::DrawCircle(Point P1, Point P2, GfxInfo circleGfxInfo, bool selected) const
+{
+	float Radius = sqrt(pow((P1.x) - (P2.x), 2) + pow((P1.y) - (P2.y), 2));
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = circleGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (circleGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(circleGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+
+	pWind->DrawCircle(P1.x, P1.y, Radius, style);
+	CreateDrawToolBar();
 }
 
 
