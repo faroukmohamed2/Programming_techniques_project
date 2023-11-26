@@ -6,12 +6,14 @@ class Output	//The application manager should have a pointer to this class
 {
 private:	
 	window* pWind;	//Pointer to the Graphics Window
+	image MenuItemImagesGR[DRAW_ITM_COUNT];
+	image PlayMenuItems[PLAY_ITM_COUNT];
 public:
 	Output();		
 
 	window* CreateWind(int, int, int , int) const; //creates the application window
 	void CreateDrawToolBar() const;	//creates Draw mode toolbar & menu
-	void DrawGROUP(int& , int& , const int , const string [] ) const ;       // Draws Each Group 
+	void DrawGROUP(int& , int& , const int  ) const ;       // Draws Each Group 
 	void CreatePlayToolBar() const;	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
 
