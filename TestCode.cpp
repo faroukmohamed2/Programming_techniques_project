@@ -336,29 +336,29 @@ int main()
 			pOut->PrintMessage("Action: selected fill bucket , Click any shape");
 			break;
 		case Selection_Tool:
-			pOut->PrintMessage("Action: selected selection toolxz , Click any shape");
+			pOut->PrintMessage("Action: selected selection tool , Click any shape");
 			break;
 
 		case UNDO:
-			pOut->PrintMessage("Action: Undid [LAST ACTION]");
+			pOut->PrintMessage("Action: Undo [LAST ACTION]");
 			break;
 
 		case REDO:
-			pOut->PrintMessage("Action: Redid [LAST ACTION]");
+			pOut->PrintMessage("Action: Redo [LAST ACTION]");
 			break;
 
 		case Delete:
-			pOut->PrintMessage("Action: selected deletion tool , Click any shape");
+			pOut->PrintMessage("Action: select deletion tool , Click any shape");
 			break;
 
 		case ClearBoard:
-			pOut->PrintMessage("Action: Cleared board");
+			pOut->PrintMessage("Action: Clear board");
 			break;
 		case START_RECORD:
-			pOut->PrintMessage("Action: Recording Started.");
+			pOut->PrintMessage("Action: Start Recording.");
 			break;
 		case STOP_RECORD:
-			pOut->PrintMessage("Action: Recording stoped.");
+			pOut->PrintMessage("Action: Stop Recording.");
 			break;
 		case SAVE_RECORD:
 			pOut->PrintMessage("Action: Recording saved.");
