@@ -267,23 +267,23 @@ void Output::DrawTrig(Point P1, Point P2, Point P3, GfxInfo TrigGfxInfo, bool se
 
 {
 	color DrawingClr;
-	if (selected)
-		DrawingClr = UI.HighlightColor; 
+	if (selected)  //if we select the figure
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
 	else
-		DrawingClr = TrigGfxInfo.DrawClr;
+		DrawingClr = TrigGfxInfo.DrawClr; //Figure will be drawn with the color stored In TrigGfxInfo
 
-	pWind->SetPen(DrawingClr, 1);
+	pWind->SetPen(DrawingClr, 1);  //set the pen with the draw color and width 1
 	drawstyle style;
-	if (TrigGfxInfo.isFilled)
+	if (TrigGfxInfo.isFilled) // if we want to fill the figure
 	{
-		style = FILLED;
-		pWind->SetBrush(TrigGfxInfo.FillClr);
+		style = FILLED; //we will make the style to filled
+		pWind->SetBrush(TrigGfxInfo.FillClr); //set the brush with the wanted fill color
 	}
 	else
 		style = FRAME;
 
 
-	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);//call the triangle draw function and pass to it the 3 vertices and the style
 	
 }
 
@@ -293,9 +293,10 @@ void Output::DrawHexa(Point P1, GfxInfo HexaGfxInfo, bool selected) const
 //selected is a boolean express is used for highlighting the shape
 
 {
-	float l = 100;
-	int X[6];
-	int Y[6];
+	float l = 100;//it is a default number that used to calc the vertices of the hexagon with respect to the center "p1"
+	int X[6];//the x components of the vertices
+	int Y[6];//the y components of the vertices
+/////here we calc the vertices with respect to the center by geometry
 	X[3] = (P1.x) + l;
 	X[0] = (P1.x) - l;
 	Y[0] = Y[3] = P1.y;
@@ -303,25 +304,27 @@ void Output::DrawHexa(Point P1, GfxInfo HexaGfxInfo, bool selected) const
 	X[2] = X[4] = (P1.x) + (l / 2);
 	Y[4] = Y[5] = (P1.y) + (0.8660254 * l);
 	Y[1] = Y[2] = (P1.y) - (0.8660254 * l);
-	color DrawingClr;
-	if (selected)
-		DrawingClr = UI.HighlightColor; 
-	else
-		DrawingClr = HexaGfxInfo.DrawClr;
+:///////////
 
-	pWind->SetPen(DrawingClr, 1);
+	color DrawingClr;
+	if (selected)  //if we select the figure
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = HexaGfxInfo.DrawClr; //Figure will be drawn with the color stored In HexaGfxInfo
+
+	pWind->SetPen(DrawingClr, 1);   //set the pen with the draw color and width 1
 	drawstyle style;
-	if (HexaGfxInfo.isFilled)
+	if (HexaGfxInfo.isFilled) // if we want to fill the figure
 	{
-		style = FILLED;
-		pWind->SetBrush(HexaGfxInfo.FillClr);
+		style = FILLED; //we will make the style to filled
+		pWind->SetBrush(HexaGfxInfo.FillClr); //set the brush with the wanted fill color
 	}
 	else
 		style = FRAME;
 
 
-	pWind->DrawPolygon(X, Y, 6, style);
-	CreateDrawToolBar();
+	pWind->DrawPolygon(X, Y, 6, style);//we call the polygon draw function and pass two X and y components arrays , number of vertices "6" and the style
+	CreateDrawToolBar();//we redraw the tool bar becaue of the case . a part of the hexagon is in the region of tool bar
 }
 
 void Output::DrawCircle(Point P1, Point P2, GfxInfo circleGfxInfo, bool selected) const
@@ -331,24 +334,24 @@ void Output::DrawCircle(Point P1, Point P2, GfxInfo circleGfxInfo, bool selected
 {
 	float Radius = sqrt(pow((P1.x) - (P2.x), 2) + pow((P1.y) - (P2.y), 2));//calc the radius of the circle because we need it in the circle drawing function
 	color DrawingClr;
-	if (selected)
-		DrawingClr = UI.HighlightColor; 
+	if (selected)  //if we select the figure
+		DrawingClr = UI.HighlightColor;  //Figure should be drawn highlighted
 	else
-		DrawingClr = circleGfxInfo.DrawClr;
+		DrawingClr = circleGfxInfo.DrawClr; //Figure will be drawn with the color stored In circlrGfxInfo
 
-	pWind->SetPen(DrawingClr, 1);
+	pWind->SetPen(DrawingClr, 1); //set the pen with the draw color and width 1
 	drawstyle style;
-	if (circleGfxInfo.isFilled)
+	if (circleGfxInfo.isFilled) // if we want to fill the figure
 	{
-		style = FILLED;
-		pWind->SetBrush(circleGfxInfo.FillClr);
+		style = FILLED; //we will make the style to filled
+		pWind->SetBrush(circleGfxInfo.FillClr); //set the brush with the wanted fill color
 	}
 	else
 		style = FRAME;
 
 
-	pWind->DrawCircle(P1.x, P1.y, Radius, style);
-	CreateDrawToolBar();
+	pWind->DrawCircle(P1.x, P1.y, Radius, style); // call the circle draw function and pass to it (center , radius"calculated") and style
+	CreateDrawToolBar(); //we redraw the tool bar becaue of the case . a part of the circle is in the region of tool bar
 }
 
 
