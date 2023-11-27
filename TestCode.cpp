@@ -107,7 +107,7 @@ int main()
 	gfxInfo.BorderWdth = 5;//border width
 	gfxInfo.DrawClr = GREEN;	//any color for border
 	gfxInfo.isFilled = false;	//Figure is NOT filled
-	pOut->DrawSquare(P1, gfxInfo, false);
+	pOut->DrawSquare(P1, gfxInfo, false);//draw square function
 	pOut->PrintMessage("Drawing Square==>non-filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
@@ -125,7 +125,7 @@ int main()
 	pIn->getValidDrawPoint(P1);// ckecking point validity for drawing
 	
 
-	gfxInfo.BorderWdth = 6;
+	gfxInfo.BorderWdth = 6; //the border width
 	gfxInfo.DrawClr = GREEN;	//any color for border
 	gfxInfo.FillClr = BLUE;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
@@ -137,13 +137,13 @@ int main()
 	// 2.2.4 - Drawing a highlighted filled Square
 	pOut->PrintMessage("Drawing a Square ==> Highlighted filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->DrawSquare(P1, gfxInfo, true);
+	pOut->DrawSquare(P1, gfxInfo, true);//draw square function
 
 
 
 	pOut->PrintMessage("Drawing a Square ==> Highlighted filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->ClearDrawArea();
+	pOut->ClearDrawArea();//delete the figure
 
 	/// 2.4- Hexagon Test ///
 	/// =================== 
@@ -154,13 +154,13 @@ int main()
 
 	// 2.4.1 - Drawing a non filled Hexagon
 	pOut->PrintMessage("Drawing a Hexagon ==> non filled,  Click one click");
-	pIn->GetPointClicked(P1.x, P1.y);
-	pIn->getValidDrawPoint(P1);
+	pIn->GetPointClicked(P1.x, P1.y);//wait for any click
+	pIn->getValidDrawPoint(P1);//checking point validity of drawing
 
-	gfxInfo.BorderWdth = 5;
-	gfxInfo.DrawClr = GREEN;
-	gfxInfo.isFilled = false;
-	pOut->DrawHexa(P1, gfxInfo, false);
+	gfxInfo.BorderWdth = 5; //border width
+	gfxInfo.DrawClr = GREEN; //drawing color
+	gfxInfo.isFilled = false; //is not filled
+	pOut->DrawHexa(P1, gfxInfo, false); //hexagon drawing function
 	pOut->PrintMessage("Drawing a Hexagon ==> non filled==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
@@ -168,31 +168,31 @@ int main()
 	// 2.4.2 - Drawing a non-filled and highlighted Hexagon
 	pOut->PrintMessage("Drawing a Hexagon ==> Highlighted non-filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->DrawHexa(P1, gfxInfo, true);
+	pOut->DrawHexa(P1, gfxInfo, true); //hexagon drawing function
 	pOut->PrintMessage("Drawing a Hexagon ==> Highlighted non-filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->ClearDrawArea();
+	pOut->ClearDrawArea(); //delete figure
 
 	// 2.4.3 - Drawing a filled Hexagon
 	pOut->PrintMessage("Drawing a Hexagon ==> filled,  Click one click");
-	pIn->GetPointClicked(P1.x, P1.y);
-	pIn->getValidDrawPoint(P1);
+	pIn->GetPointClicked(P1.x, P1.y); //wait for any click
+	pIn->getValidDrawPoint(P1); //checking point validity for drawing
 
-	gfxInfo.BorderWdth = 5;
-	gfxInfo.DrawClr = BLACK;
-	gfxInfo.FillClr = GREEN;
-	gfxInfo.isFilled = true;
-	pOut->DrawHexa(P1, gfxInfo, false);
+	gfxInfo.BorderWdth = 5; //border width
+	gfxInfo.DrawClr = BLACK; //drawing color
+	gfxInfo.FillClr = GREEN; //filling color
+	gfxInfo.isFilled = true; // it is filled
+	pOut->DrawHexa(P1, gfxInfo, false); //hexagon drawing function
 	pOut->PrintMessage("Drawing a Hexagon ==> filled==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	// 2.4.4 - Drawing a non-filled and highlighted triangle
 	pOut->PrintMessage("Drawing a Hexagon ==> Highlighted filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->DrawHexa(P1, gfxInfo, true);
+	pOut->DrawHexa(P1, gfxInfo, true);//hexagon drawing function
 	pOut->PrintMessage("Drawing a Hexagon ==> Highlighted filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->ClearDrawArea();
+	pOut->ClearDrawArea(); //delete figure
 
 
 
@@ -205,15 +205,15 @@ int main()
 
 	// 2.5.1 - Drawing a non filled Circle
 	pOut->PrintMessage("Drawing a Circle ==> non-filled ,  Click two clicks");
-	pIn->GetPointClicked(P1.x, P1.y);
-	pIn->getValidDrawPoint(P1);
-	pIn->GetPointClicked(P2.x, P2.y);
-	pIn->getValidDrawPoint(P2);
+	pIn->GetPointClicked(P1.x, P1.y);//wait for any click (center)
+	pIn->getValidDrawPoint(P1); //checking point validity for drawing
+	pIn->GetPointClicked(P2.x, P2.y); //wait for any click (point on the circle)
+	pIn->getValidDrawPoint(P2); //checking point validity for drawing
 
-	gfxInfo.BorderWdth = 5;
-	gfxInfo.DrawClr = GREEN;
-	gfxInfo.isFilled = false;
-	pOut->DrawCircle(P1, P2, gfxInfo, false);
+	gfxInfo.BorderWdth = 5; //border width
+	gfxInfo.DrawClr = GREEN; //drawing color
+	gfxInfo.isFilled = false; // is not filled
+	pOut->DrawCircle(P1, P2, gfxInfo, false); //circle drawing function
 	pOut->PrintMessage("Drawing a Circle==> non filled==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
@@ -221,23 +221,23 @@ int main()
 	// 2.5.2 - Drawing a non-filled and highlighted Circle
 	pOut->PrintMessage("Drawing a circle ==> Highlighted non-filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->DrawCircle(P1, P2, gfxInfo, true);
+	pOut->DrawCircle(P1, P2, gfxInfo, true);//circle drawing function
 	pOut->PrintMessage("Drawing a circle ==> Highlighted non-filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->ClearDrawArea();
+	pOut->ClearDrawArea();  //delete figure
 
 	// 2.5.3 - Drawing a filled Circle
 	pOut->PrintMessage("Drawing a Circle ==> filled ,  Click two clicks");
-	pIn->GetPointClicked(P1.x, P1.y);
-	pIn->getValidDrawPoint(P1);
-	pIn->GetPointClicked(P2.x, P2.y);
-	pIn->getValidDrawPoint(P2);
+	pIn->GetPointClicked(P1.x, P1.y); //wait for any click (center)
+	pIn->getValidDrawPoint(P1);   //checking point validity for drawing
+	pIn->GetPointClicked(P2.x, P2.y); //wait for any click (point on the circle)
+	pIn->getValidDrawPoint(P2);  //checking point validity for drawing
 
-	gfxInfo.BorderWdth = 5;
-	gfxInfo.DrawClr = BLACK;
-	gfxInfo.FillClr = GREEN;
-	gfxInfo.isFilled = true;
-	pOut->DrawCircle(P1, P2, gfxInfo, false);
+	gfxInfo.BorderWdth = 5; //border width
+	gfxInfo.DrawClr = BLACK; //drawing color
+	gfxInfo.FillClr = GREEN; //filling color
+	gfxInfo.isFilled = true; // it is filled
+	pOut->DrawCircle(P1, P2, gfxInfo, false); //circle drawing fuction
 	pOut->PrintMessage("Drawing a Hexagon ==> filled==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
@@ -245,11 +245,11 @@ int main()
 
 	// 2.5.4 - Drawing a filled and highlighted Circle
 	pOut->PrintMessage("Drawing a circle ==> Highlighted filled, Click to Highlight");
-	pIn->GetPointClicked(x, y);	
-	pOut->DrawCircle(P1, P2, gfxInfo, true);
+	pIn->GetPointClicked(x, y);	//wait for any click
+	pOut->DrawCircle(P1, P2, gfxInfo, true); //circle drawing function
 	pOut->PrintMessage("Drawing a circle ==> Highlighted ==> OK,  Click anywhere to continue");
-	pIn->GetPointClicked(x, y);
-	pOut->ClearDrawArea();
+	pIn->GetPointClicked(x, y); //wait for any click
+	pOut->ClearDrawArea(); //delete figure
 
 
 	///////////////////////////////////////////////////////////////////////////////////
