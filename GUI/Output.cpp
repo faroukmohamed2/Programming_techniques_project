@@ -215,18 +215,18 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	else
 		DrawingClr = RectGfxInfo.DrawClr;//Figure will be drawn with the color stored In RectGfxInfo
 
-	pWind->SetPen(DrawingClr, 1);
+	pWind->SetPen(DrawingClr, 1);//set the pen with the draw color and width 1
 	drawstyle style;
 	if (RectGfxInfo.isFilled)// if we want to fill the figure
 	{
 		style = FILLED;//we will make the style to filled
-		pWind->SetBrush(RectGfxInfo.FillClr);//set the brush to the wanted fill color
+		pWind->SetBrush(RectGfxInfo.FillClr);//set the brush with the wanted fill color
 	}
 	else
 		style = FRAME;
 
 
-	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);//call the function that draw a rectangle and we will pass to it the 2 corners and style
 	
 }
 
@@ -236,26 +236,26 @@ void Output::DrawSquare(Point P1, GfxInfo squareGfxInfo, bool selected) const
 //and it take the graphics information of the wanted shape to draw it 
 //selected is a boolean express is used for highlighting the shape
 {
-	const int length = 70;//it is a default number that used to calc the vertices of the square with respect to the center "p1"
-	color DrawingClr;//the drawing color that we use to draw the border of the shape
+	const int length = 70; //it is a default number that used to calc the vertices of the square with respect to the center "p1"
+	color DrawingClr; //the drawing color that we use to draw the border of the shape
 	if (selected)     //if we select the figure
 		DrawingClr = UI.HighlightColor;//Figure should be drawn highlighted
 	else
-		DrawingClr = squareGfxInfo.DrawClr;//Figure will be drawn with the color stored In RectGfxInfo
+		DrawingClr = squareGfxInfo.DrawClr;//Figure will be drawn with the color stored In squareGfxInfo
 
-	pWind->SetPen(DrawingClr, 1);
+	pWind->SetPen(DrawingClr, 1);//set the pen with the draw color and width 1
 	drawstyle style;
-	if (squareGfxInfo.isFilled)
+	if (squareGfxInfo.isFilled)// if we want to fill the figure
 	{
-		style = FILLED;
-		pWind->SetBrush(squareGfxInfo.FillClr);
+		style = FILLED;//we will make the style to filled
+		pWind->SetBrush(squareGfxInfo.FillClr);//set the brush with the wanted fill color
 	}
 	else
 		style = FRAME;
 
 
-	pWind->DrawRectangle((P1.x) - length, (P1.y) - length, (P1.x) + length, (P1.y) + length, style);
-	CreateDrawToolBar();
+	pWind->DrawRectangle((P1.x) - length, (P1.y) - length, (P1.x) + length, (P1.y) + length, style);//call the function that draw a rectangle and we pass the vertices of the square to it
+	CreateDrawToolBar();//we redraw the tool bar becaue of the case . a part of the square is in the region of tool bar
 }
 
 
