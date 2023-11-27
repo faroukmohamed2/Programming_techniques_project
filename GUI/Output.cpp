@@ -261,6 +261,10 @@ void Output::DrawSquare(Point P1, GfxInfo squareGfxInfo, bool selected) const
 
 
 void Output::DrawTrig(Point P1, Point P2, Point P3, GfxInfo TrigGfxInfo, bool selected) const
+//this function take three points (the triangle vertices)
+//and it take the graphics information of the wanted shape to draw it 
+//selected is a boolean express is used for highlighting the shape
+
 {
 	color DrawingClr;
 	if (selected)
@@ -284,6 +288,10 @@ void Output::DrawTrig(Point P1, Point P2, Point P3, GfxInfo TrigGfxInfo, bool se
 }
 
 void Output::DrawHexa(Point P1, GfxInfo HexaGfxInfo, bool selected) const
+//this function takes one point (the hexagon center)
+//and it take the graphics information of the wanted shape to draw it 
+//selected is a boolean express is used for highlighting the shape
+
 {
 	float l = 100;
 	int X[6];
@@ -317,8 +325,11 @@ void Output::DrawHexa(Point P1, GfxInfo HexaGfxInfo, bool selected) const
 }
 
 void Output::DrawCircle(Point P1, Point P2, GfxInfo circleGfxInfo, bool selected) const
+//this function take two points (the center of the circle and another one point on the circle)
+//and it take the graphics information of the wanted shape to draw it 
+//selected is a boolean express is used for highlighting the shape
 {
-	float Radius = sqrt(pow((P1.x) - (P2.x), 2) + pow((P1.y) - (P2.y), 2));
+	float Radius = sqrt(pow((P1.x) - (P2.x), 2) + pow((P1.y) - (P2.y), 2));//calc the radius of the circle because we need it in the circle drawing function
 	color DrawingClr;
 	if (selected)
 		DrawingClr = UI.HighlightColor; 
