@@ -36,7 +36,7 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	GfxInfo gfxInfo;//to be used with draw function of the class Ouput
-	Point P1, P2, P3;
+	Point P1, P2, P3;//the points that we will click to draw the shapes
 
 	/// 2.1- Rectangle Test ///
 	/// =================== 
@@ -45,38 +45,38 @@ int main()
 
 	// 2.1.1 - Drawing non-filled rectangle
 	pOut->PrintMessage("Drawing a Rectangle ==> non-filled,  Click two points");
-	pIn->GetPointClicked(P1.x, P1.y);
-	pIn->getValidDrawPoint(P1);// this function is used to check that we don't draw over the status or tool bar
-	pIn->GetPointClicked(P2.x, P2.y);
-	pIn->getValidDrawPoint(P2);
+	pIn->GetPointClicked(P1.x, P1.y);//wait for any click
+	pIn->getValidDrawPoint(P1);// ckecking point validity for drawing
+	pIn->GetPointClicked(P2.x, P2.y);://wait for any click
+	pIn->getValidDrawPoint(P2);// ckecking point validity for drawing
 
 	gfxInfo.BorderWdth = 5;
 	gfxInfo.DrawClr = BLACK;	//any color for border
 	gfxInfo.isFilled = false;	//Figure is NOT filled
-	pOut->DrawRect(P1, P2, gfxInfo, false);
+	pOut->DrawRect(P1, P2, gfxInfo, false);//rectangle drawing function
 	pOut->PrintMessage("Drawing a Rectangle ==>non-filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	// 2.1.2 - Drawing highlighted non-filled rectangle
 	pOut->PrintMessage("Drawing a Rectangle ==> Highlighted non-filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->DrawRect(P1, P2, gfxInfo, true);
+	pOut->DrawRect(P1, P2, gfxInfo, true);//rectangle drawing function
 	pOut->PrintMessage("Drawing a Rectangle ==> Highlighted non-filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->ClearDrawArea();
+	pOut->ClearDrawArea();//delete the rectangle
 
 	// 2.1.3 - Drawing a filled rectangle
 	pOut->PrintMessage("Drawing a Rectangle ==> filled,  Click two points");
-	pIn->GetPointClicked(P1.x, P1.y);
-	pIn->getValidDrawPoint(P1);
-	pIn->GetPointClicked(P2.x, P2.y);
-	pIn->getValidDrawPoint(P2);
+	pIn->GetPointClicked(P1.x, P1.y);//wait for any click
+	pIn->getValidDrawPoint(P1);// ckecking point validity for drawing
+	pIn->GetPointClicked(P2.x, P2.y);//wait for any click
+	pIn->getValidDrawPoint(P2);// ckecking point validity for drawing
 
 	gfxInfo.BorderWdth = 6;
 	gfxInfo.DrawClr = BLUE;	//any color for border
 	gfxInfo.FillClr = GREEN;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
-	pOut->DrawRect(P1, P2, gfxInfo, false);
+	pOut->DrawRect(P1, P2, gfxInfo, false);// rectangle drawing fuction
 	pOut->PrintMessage("Drawing a Rectangle ==> filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
@@ -101,10 +101,10 @@ int main()
 
 	// 2.2.1 - Drawing non-filled Square
 	pOut->PrintMessage("Drawing a Square ==> non-filled,  Click one point");
-	pIn->GetPointClicked(P1.x, P1.y);
-	pIn->getValidDrawPoint(P1);
+	pIn->GetPointClicked(P1.x, P1.y);//wait for any click
+	pIn->getValidDrawPoint(P1);// ckecking point validity for drawing
 
-	gfxInfo.BorderWdth = 5;
+	gfxInfo.BorderWdth = 5;//border width
 	gfxInfo.DrawClr = GREEN;	//any color for border
 	gfxInfo.isFilled = false;	//Figure is NOT filled
 	pOut->DrawSquare(P1, gfxInfo, false);
@@ -114,7 +114,7 @@ int main()
 	// 2.2.2 - Drawing highlighted non-filled Square
 	pOut->PrintMessage("Drawing a Square ==> Highlighted non-filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->DrawSquare(P1, gfxInfo, true);
+	pOut->DrawSquare(P1, gfxInfo, true);//square drawing function
 	pOut->PrintMessage("Drawing a Square==> Highlighted non-filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->ClearDrawArea();
