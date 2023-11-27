@@ -205,19 +205,22 @@ int Output::getCrntPenWidth() const		//get current pen width
 
 
 void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) const
+//this function take two points the up-left and the down-right conrners of the rectangle 
+//and it take the graphics information of the wanted shape to draw it 
+//selected is a boolean express is used for highlighting the shape
 {
 	color DrawingClr;//the drawing color that will we use
-	if (selected)
+	if (selected)      //if we select the figure
 		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
 	else
-		DrawingClr = RectGfxInfo.DrawClr;
+		DrawingClr = RectGfxInfo.DrawClr;//Figure will be drawn with the color stored In RectGfxInfo
 
 	pWind->SetPen(DrawingClr, 1);
 	drawstyle style;
-	if (RectGfxInfo.isFilled)
+	if (RectGfxInfo.isFilled)// if we want to fill the figure
 	{
-		style = FILLED;
-		pWind->SetBrush(RectGfxInfo.FillClr);
+		style = FILLED;//we will make the style to filled
+		pWind->SetBrush(RectGfxInfo.FillClr);//set the brush to the wanted fill color
 	}
 	else
 		style = FRAME;
@@ -229,13 +232,16 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 
 
 void Output::DrawSquare(Point P1, GfxInfo squareGfxInfo, bool selected) const
+//this function take only one point (the center of the square) and we calc the vertices by the geometry of the square
+//and it take the graphics information of the wanted shape to draw it 
+//selected is a boolean express is used for highlighting the shape
 {
 	const int length = 70;//it is a default number that used to calc the vertices of the square with respect to the center "p1"
-	color DrawingClr;
-	if (selected)
-		DrawingClr = UI.HighlightColor; 
+	color DrawingClr;//the drawing color that we use to draw the border of the shape
+	if (selected)     //if we select the figure
+		DrawingClr = UI.HighlightColor;//Figure should be drawn highlighted
 	else
-		DrawingClr = squareGfxInfo.DrawClr;
+		DrawingClr = squareGfxInfo.DrawClr;//Figure will be drawn with the color stored In RectGfxInfo
 
 	pWind->SetPen(DrawingClr, 1);
 	drawstyle style;
