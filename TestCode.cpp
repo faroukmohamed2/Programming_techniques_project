@@ -121,15 +121,15 @@ int main()
 
 	// 2.2.3 - Drawing a filled Square
 	pOut->PrintMessage("Drawing a Square ==> filled,  Click one point");
-	pIn->GetPointClicked(P1.x, P1.y);
-	pIn->getValidDrawPoint(P1);
+	pIn->GetPointClicked(P1.x, P1.y);//wait for any click
+	pIn->getValidDrawPoint(P1);// ckecking point validity for drawing
 	
 
 	gfxInfo.BorderWdth = 6;
 	gfxInfo.DrawClr = GREEN;	//any color for border
 	gfxInfo.FillClr = BLUE;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
-	pOut->DrawSquare(P1, gfxInfo, false);
+	pOut->DrawSquare(P1, gfxInfo, false);://square drawing function
 	pOut->PrintMessage("Drawing a Square ==> filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
