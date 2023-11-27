@@ -230,7 +230,7 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 
 void Output::DrawSquare(Point P1, GfxInfo squareGfxInfo, bool selected) const
 {
-	const int length = 70;
+	const int length = 70;//it is a default number that used to calc the vertices of the square with respect to the center "p1"
 	color DrawingClr;
 	if (selected)
 		DrawingClr = UI.HighlightColor; 
