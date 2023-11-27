@@ -25,9 +25,11 @@ string Input::GetSrting(Output *pO) const
 {
 	string Label;
 	char Key;
+	pWind->FlushKeyQueue();
 	while(1)
 	{
 		pWind->WaitKeyPress(Key);
+		pWind->FlushMouseQueue();
 		if(Key == 27 )	//ESCAPE key is pressed
 			return "";	//returns nothing as user has cancelled label
 		if(Key == 13 )	//ENTER key is pressed

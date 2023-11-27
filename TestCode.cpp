@@ -47,7 +47,7 @@ int main()
 	pOut->PrintMessage("Drawing a Rectangle ==> non-filled,  Click two points");
 	pIn->GetPointClicked(P1.x, P1.y);//wait for any click
 	pIn->getValidDrawPoint(P1);// ckecking point validity for drawing
-	pIn->GetPointClicked(P2.x, P2.y);://wait for any click
+	pIn->GetPointClicked(P2.x, P2.y);//wait for any click
 	pIn->getValidDrawPoint(P2);// ckecking point validity for drawing
 
 	gfxInfo.BorderWdth = 5;
@@ -129,7 +129,7 @@ int main()
 	gfxInfo.DrawClr = GREEN;	//any color for border
 	gfxInfo.FillClr = BLUE;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
-	pOut->DrawSquare(P1, gfxInfo, false);://square drawing function
+	pOut->DrawSquare(P1, gfxInfo, false);//square drawing function
 	pOut->PrintMessage("Drawing a Square ==> filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
