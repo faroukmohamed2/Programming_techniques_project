@@ -254,7 +254,7 @@ void Output::DrawSquare(Point P1, GfxInfo squareGfxInfo, bool selected) const
 		style = FRAME;
 
 
-	pWind->DrawRectangle((P1.x) - length, (P1.y) - length, (P1.x) + length, (P1.y) + length, style);//call the function that draw a rectangle and we pass the vertices of the square to it
+	pWind->DrawRectangle((P1.x) - length, (P1.y) - length, (P1.x) + length, (P1.y) + length, style);//call the function that draw a rectangle and we pass the corners of the square (we calculated them) and style
 	CreateDrawToolBar();//we redraw the tool bar becaue of the case . a part of the square is in the region of tool bar
 }
 
