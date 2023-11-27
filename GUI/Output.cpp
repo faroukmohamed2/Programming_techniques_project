@@ -109,16 +109,11 @@ void Output::ClearStatusBar() const
 //////////////////////////////////////////////////////////////////////////////////////////
 void Output::CreateDrawToolBar() const
 {
+	//Draw White Box in empty spaces
 	UI.InterfaceMode = MODE_DRAW;
 	pWind->SetPen( WHITE, 1);
 	pWind->SetBrush(WHITE);
-	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight, FILLED);
-	//You can draw the tool bar icons in any way you want.
-	//Below is one possible way
-
-	//First prepare List of images for each menu item
-	//To control the order of these images in the menu, 
-	//reoder them in UI_Info.h ==> enum DrawMenuItem
+	pWind->DrawRectangle(UI.MenuItemWidth * 13, 0, UI.width - UI.MenuItemWidth * 2 * 1.5, UI.ToolBarHeight, FILLED);
 	
 
 	int Printed = 0; 
@@ -141,6 +136,16 @@ void Output::DrawGROUP(int& UpperITEMS ,int& Printed , const int ITEMS ) const  
 		int pX = (x++ / 2) * UI.MenuItemWidth;
 		int pY = (UI.ToolBarHeight / 2) * (1 - (x % 2));
 		pWind->DrawImage(MenuItemImagesGR[i], pX, pY, UI.MenuItemWidth, (UI.MenuItemHeight));
+	}
+
+	//Draw White icons in empty buttons
+	if (x % 2 == 1) {
+		int pX = ((x) / 2) * UI.MenuItemWidth;
+		int pY = (UI.ToolBarHeight / 2);
+
+		pWind->SetPen(WHITE, 1);
+		pWind->SetBrush(WHITE);
+		pWind->DrawRectangle(pX, pY, pX+UI.MenuItemWidth, pY+UI.MenuItemHeight, FILLED);
 	}
 
 	UpperITEMS += (ITEMS+1) / 2;
