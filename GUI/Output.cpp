@@ -304,7 +304,7 @@ void Output::DrawHexa(Point P1, GfxInfo HexaGfxInfo, bool selected) const
 	X[2] = X[4] = (P1.x) + (l / 2);
 	Y[4] = Y[5] = (P1.y) + (0.8660254 * l);
 	Y[1] = Y[2] = (P1.y) - (0.8660254 * l);
-:///////////
+/////////
 
 	color DrawingClr;
 	if (selected)  //if we select the figure
