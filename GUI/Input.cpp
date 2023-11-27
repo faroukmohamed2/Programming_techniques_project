@@ -64,7 +64,7 @@ ActionType Input::GetUserAction() const
 				itemIndex--;
 			}
 
-			ActionType action = (ActionType)(itemIndex + 6);
+			ActionType action = (ActionType)(itemIndex + DRW_RECT);
 			if (action > EMPTY) return EMPTY;
 
 			return action;

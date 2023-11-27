@@ -230,10 +230,10 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 
 void Output::DrawSquare(Point P1, GfxInfo squareGfxInfo, bool selected) const
 {
-	const int length = 200;
+	const int length = 70;
 	color DrawingClr;
 	if (selected)
-		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+		DrawingClr = UI.HighlightColor; 
 	else
 		DrawingClr = squareGfxInfo.DrawClr;
 
@@ -251,11 +251,14 @@ void Output::DrawSquare(Point P1, GfxInfo squareGfxInfo, bool selected) const
 	pWind->DrawRectangle((P1.x) - length, (P1.y) - length, (P1.x) + length, (P1.y) + length, style);
 	CreateDrawToolBar();
 }
+
+
+
 void Output::DrawTrig(Point P1, Point P2, Point P3, GfxInfo TrigGfxInfo, bool selected) const
 {
 	color DrawingClr;
 	if (selected)
-		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+		DrawingClr = UI.HighlightColor; 
 	else
 		DrawingClr = TrigGfxInfo.DrawClr;
 
@@ -288,7 +291,7 @@ void Output::DrawHexa(Point P1, GfxInfo HexaGfxInfo, bool selected) const
 	Y[1] = Y[2] = (P1.y) - (0.8660254 * l);
 	color DrawingClr;
 	if (selected)
-		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+		DrawingClr = UI.HighlightColor; 
 	else
 		DrawingClr = HexaGfxInfo.DrawClr;
 
@@ -312,7 +315,7 @@ void Output::DrawCircle(Point P1, Point P2, GfxInfo circleGfxInfo, bool selected
 	float Radius = sqrt(pow((P1.x) - (P2.x), 2) + pow((P1.y) - (P2.y), 2));
 	color DrawingClr;
 	if (selected)
-		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+		DrawingClr = UI.HighlightColor; 
 	else
 		DrawingClr = circleGfxInfo.DrawClr;
 
