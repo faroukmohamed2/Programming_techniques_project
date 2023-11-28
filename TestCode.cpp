@@ -247,7 +247,7 @@ int main()
 	pOut->PrintMessage("Drawing a circle ==> Highlighted filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//wait for any click
 	pOut->DrawCircle(P1, P2, gfxInfo, true); //circle drawing function
-	pOut->PrintMessage("Drawing a circle ==> Highlighted ==> OK,  Click anywhere to continue");
+	pOut->PrintMessage("Drawing a circle ==> Highlighted filled ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y); //wait for any click
 	pOut->ClearDrawArea(); //delete figure
 
