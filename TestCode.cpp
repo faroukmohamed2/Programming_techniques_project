@@ -1,7 +1,7 @@
 #include "GUI\Input.h"
 #include "GUI\Output.h"
 #include <cmath>
-//This is a test code to test the Input and Output classes
+//This is a test code to test the Input and Output classe
 
 int main()
 {
